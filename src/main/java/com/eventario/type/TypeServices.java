@@ -24,7 +24,6 @@ public class TypeServices {
 
     // create types
     TypeModel createType(TypeModel typeModel) {
-        if (typeModel.getId() != null) return null;
         return typeRepository.save(typeModel);
     }
 
