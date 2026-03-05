@@ -25,16 +25,16 @@ public class TypeModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_type")
-    Long id;
+    private Long id;
 
     @Column(name = "uuid_type", unique = true, updatable = false,nullable = false)
-    UUID uuid;
+    private UUID uuid;
 
     @Column(name = "name")
-    String name;
+    private String name;
 
     @Column(name = "description")
-    String description;
+    private String description;
 
 
 }

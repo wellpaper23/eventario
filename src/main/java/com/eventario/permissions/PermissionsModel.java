@@ -25,12 +25,12 @@ public class PermissionsModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @Column(name = "uuid", unique = true, updatable = false,nullable = false)
-    UUID uuid;
+    private UUID uuid;
     @Column(name = "description")
-    String description;
+    private String description;
     @Column(name = "type_permission")
-    String typePermission;
+    private String typePermission;
     @Column(name = "name")
-    String name;
+    private String name;
 
 }
