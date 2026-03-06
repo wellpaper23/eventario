@@ -11,8 +11,10 @@ import java.util.UUID;
 
 @Data
 @NoArgsConstructor
+@Entity
+@Table(name = "events")
 public class EventsModel {
-    public EventsModel(Long id, UUID uuid, String name, String description, LocalDate date, LocalTime time, String status, UserModel creator) {
+    public EventsModel(Long id, UUID uuid, String name, String description, LocalDate date, LocalTime time, String status, String creator) {
         Id = id;
         this.uuid = UUID.randomUUID();
         this.name = name;
@@ -24,7 +26,7 @@ public class EventsModel {
     }
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long Id;
 
     @Column(name = "uuid", unique = true, updatable = false,nullable = false)
@@ -40,7 +42,7 @@ public class EventsModel {
     @Column(name = "status")
     private String status;
     @Column(name = "creator")
-    private UserModel creator;
+    private String creator;
 
 
 }
